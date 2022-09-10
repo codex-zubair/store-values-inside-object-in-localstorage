@@ -11,9 +11,6 @@ let inputFieldValue = (id) => {
 
 
 
-// `${inputFieldValue('item-name-input-field')}`,`${inputFieldValue('item-budget-input-field')}`
-
-
 // !Getting value from the storage Start....
 gettingLocalStorageValue = () => {
     value = localStorage.getItem('craft');
@@ -34,32 +31,14 @@ gettingLocalStorageValue = () => {
 
 
 
-
-
 // !Adding Object properties and set values Start...
 addObjectProperties = (object, itemName, itemBudget) => {
     
     object[itemName] = itemBudget;
     localStorage.setItem('craft',JSON.stringify(object));
     location.reload();
-    
 }
 // !Adding Object properties and set values End...
-
-
-
-
-// !clear All Start
-clearAll = ()=>{
-    localStorage.clear();
-    gettingLocalStorageValue();
-}
-// !clear All End
-
-
-
-
-
 
 
 
@@ -77,8 +56,6 @@ if(!!obj)
 // ! Error Handling And Display the Object in UI End
 
 
-
-
 // !Add item button Section Start...
 document.getElementById('add-item').addEventListener('click', async() => {
     
@@ -88,6 +65,7 @@ document.getElementById('add-item').addEventListener('click', async() => {
     
 });
 // !Add item button Section End...
+
 
 
 // TODO Show Items in UI 
@@ -106,8 +84,9 @@ function displayItem(object)
 
 
 
-
-
-// !Clear Items All Start
-
-// !Clear Items All End
+// !clear All Start
+clearAll = ()=>{
+    localStorage.clear();
+    gettingLocalStorageValue();
+}
+// !clear All End
